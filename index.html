@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Age Calculator App</title>
+</head>
+<body>
+
+  <main class="main-container">
+
+    <section class="main-section">
+
+      <div class="input-section">
+
+        <div class="day-section input-div">
+          <label for="day-input">Day</label>
+          <input type="number" name="day-input" id="day-input" class="day-input" placeholder="DD">
+        </div>
+
+        <div class="month-section input-div">
+          <label for="month-input">Month</label>
+          <input type="number" name="month-input" id="month-input" class="month-input" placeholder="MM">
+        </div>
+        
+        <div class="year-section input-div">
+          <label for="year-input">Year</label>
+          <input type="number" name="year-input" id="year-input" class="year-input" placeholder="YYYY">
+        </div>
+      </div>
+
+      <img src="assets/images/icon-arrow.svg" alt="Arrow icon" class="arrow-icon">
+
+      <div class="output-section">
+        <p>
+          <strong><i><span id="years">--</span> years</i></strong><br>
+          <strong><i><span id="months">--</span> months</i></strong><br>
+          <strong><i><span id="days">--</span> days</i></strong>
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

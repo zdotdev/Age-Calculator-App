@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before{
+  content: none;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-Purple: hsl(259, 100%, 65%);
+  --primary-Light-red: hsl(0, 100%, 67%);
+
+  --neutral-White: hsl(0, 0%, 100%);
+  --neutral-Off-white: hsl(0, 0%, 94%);
+  --neutral-Light-grey: hsl(0, 0%, 86%);
+  --neutral-Smokey-grey: hsl(0, 1%, 44%);
+  --neutral-Off-black: hsl(0, 0%, 8%);
+}
+
+html,
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a{
+  font-size: 15px;
+  text-decoration: none;
+  margin: 0;
+}
+
+input{
+  font-size: 23px;
+  caret-color: var(--primary-Purple);
+  padding: 11.5px;
+  font-weight: 800;
+  width: 8rem;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-Smokey-grey);
+  outline: var(--neutral-Off-black);
+  transition: 300ms;
+}
+
+input:focus{
+  border: 1px solid var(--primary-Purple);
+}
+
+label{
+  font-weight: 700;
+  color: var(--neutral-Smokey-grey);
+  letter-spacing: 1.4px;
+}
+
+/* Start */
+
+/* Containers */
+.main-container{
+  height: 100vh;
+  width: 100%;
+  background-color: var(--neutral-Off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-section{
+  background-color: var(--neutral-White);
+  padding: 57px;
+  width: 44rem;
+  border-radius: 2rem;
+  border-bottom-right-radius: 30%;
+}
+
+/* Input Section */
+.input-section{
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--neutral-Light-grey);
+}
+
+.input-div{
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+img{
+  background-color: var(--neutral-Off-black);
+  padding: 1.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 300ms;
+  position: absolute;
+  right: 40rem;
+  top: 23rem;
+}
+img:hover{
+  background-color: var(--primary-Purple);
+}
+
+/* Output */
+.output-section{
+  margin-top: 4rem;
+}
+
+strong{
+  font-size: 78px;
+  font-weight: 800;
+  transition: 300ms;
+  line-height: 100%;
+}
+span{
+  color: var(--primary-Purple);
+}
