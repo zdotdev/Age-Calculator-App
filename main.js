@@ -10,13 +10,13 @@ const yearInput = document.getElementById('year-input');
 
 document.querySelector('.arrow-icon').addEventListener('click', () => {
 
-    let dateCount = 0;
+    let dateCount;
     let leapYear;
 
-    if(((12 - monthInput.value) / 2) % 2){
-        dateCount += 31;
+    if(((month + 1) / 2) % 2 == 0){
+        dateCount = 30;
     }else{
-        dateCount += 30
+        dateCount = 31
     };
 
     if(year % 4 == 0){
@@ -26,20 +26,62 @@ document.querySelector('.arrow-icon').addEventListener('click', () => {
     }
 
     switch(true){
-        case(day < dateInput.value && month < monthInput.value):
+        case(day < dateInput.value && (month + 1) < monthInput.value): // birthDay < currentDate
+        document.getElementById('days').innerHTML = (dateCount - dateInput.value) + day;
+        document.getElementById('months').innerHTML = Math.abs(12 - monthInput.value);
         document.getElementById('years').innerHTML = year - yearInput.value - 1;
-        document.getElementById('months').innerHTML = 12 - monthInput.value;
-        document.getElementById('days').innerHTML = (day + (dateCount - dateInput.value));
+        break;
 
-        case(day > dateInput.value && month < monthInput.value):
-        document.getElementById('years').innerHTML = year - yearInput.value - 1;
-        document.getElementById('months').innerHTML = 12 + 1 - monthInput.value;
-        document.getElementById('days').innerHTML = Math.abs(day - dateInput.value);
-
-        case(day == dateInput.value && (month + 1) == monthInput.value):
-        document.getElementById('years').innerHTML = year - yearInput.value;
+        case(day == dateInput.value && (month + 1) == monthInput.value): // birthday == currentDate
+        document.getElementById('days').innerHTML = 0;
         document.getElementById('months').innerHTML = 0;
-        document.getElementById('days').innerHTML = Math.abs(day - dateInput.value);
+        document.getElementById('years').innerHTML = year - yearInput.value;
+        break;
+
+        case(day > dateInput.value && (month + 1) == monthInput.value): // birthDay > currentDate
+        document.getElementById('days').innerHTML = Math.abs(dateInput.value - day);
+        document.getElementById('months').innerHTML = 0;
+        document.getElementById('years').innerHTML = year - yearInput.value;
+        break;
+
+        case(day < dateInput.value && (month + 1) == monthInput.value): // birthDay > currentDate
+        document.getElementById('days').innerHTML = Math.abs(dateCount - (dateInput.value - day));
+        document.getElementById('months').innerHTML = 11;
+        document.getElementById('years').innerHTML = year - yearInput.value - 1;
+        break;
+
+        case(day > dateInput.value && (month + 1) < monthInput.value): // birthDay > currentDate
+        document.getElementById('days').innerHTML = Math.abs(dateInput.value - day);
+        document.getElementById('months').innerHTML = Math.abs(12 - monthInput.value + 1);
+        document.getElementById('years').innerHTML = year - yearInput.value - 1;
+        break;
+
+        case(day > dateInput.value && (month + 1) > monthInput.value): // birthDay > currentDate
+        document.getElementById('days').innerHTML = Math.abs(dateInput.value - day);
+        document.getElementById('months').innerHTML = Math.abs(month - monthInput.value);
+        document.getElementById('years').innerHTML = year - yearInput.value;
+        break;
+
+        case(day < dateInput.value && (month + 1) > monthInput.value): // birthDay > currentDate
+        document.getElementById('days').innerHTML = Math.abs(dateCount - dateInput.value + day);
+        document.getElementById('months').innerHTML = Math.abs(month - monthInput.value) - 1;
+        document.getElementById('years').innerHTML = year - yearInput.value;
+        break;
+
+        case(day == dateInput.value && (month + 1) < monthInput.value): // birthDay > currentDate
+        document.getElementById('days').innerHTML = Math.abs(dateInput.value - day);
+        document.getElementById('months').innerHTML = Math.abs(12 - monthInput.value) + 1;
+        document.getElementById('years').innerHTML = year - yearInput.value - 1;
+        break;
+
+        case(day == dateInput.value && (month + 1) > monthInput.value): // birthDay > currentDate
+        document.getElementById('days').innerHTML = Math.abs(dateInput.value - day);
+        document.getElementById('months').innerHTML = Math.abs(month - monthInput.value);
+        document.getElementById('years').innerHTML = year - yearInput.value;
+        break;
     }
 
+    dateInput.value = '';
+    monthInput.value = '';
+    yearInput.value = '';
 });

@@ -125,3 +125,24 @@ strong{
 span{
   color: var(--primary-Purple);
 }
+
+@media only screen and (max-width: 480px) {
+  .main-section{
+    margin: 0rem 2rem;
+    padding: 27px;
+  }
+  input{
+    width: 6rem;
+  }
+  img{
+    left: 12rem;
+    top: 22.5rem;
+    background-color: var(--primary-Purple);
+  }
+  .error-message{
+    font-size: 10px;
+  }
+  strong{
+    font-size: 58px;
+  }
+}
