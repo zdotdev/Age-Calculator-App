@@ -80,6 +80,7 @@ label{
 
 /* Input Section */
 .input-section{
+  height: 11.5rem;
   display: flex;
   gap: 2rem;
   padding-bottom: 4rem;
@@ -100,12 +101,16 @@ img{
   transition: 300ms;
   position: absolute;
   right: 40rem;
-  top: 23rem;
+  top: 23.5rem;
 }
 img:hover{
   background-color: var(--primary-Purple);
 }
 
+.error-message{
+  color: var(--primary-Light-red);
+  font-size: 12px;
+}
 /* Output */
 .output-section{
   margin-top: 4rem;
